@@ -16,6 +16,12 @@
 		046E8BE425E1F1AE00505039 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 046E8BE325E1F1AE00505039 /* main.m */; };
 		046E8BEE25E1F1AE00505039 /* ZHanKaiAndShouQITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 046E8BED25E1F1AE00505039 /* ZHanKaiAndShouQITests.m */; };
 		046E8BF925E1F1AE00505039 /* ZHanKaiAndShouQIUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 046E8BF825E1F1AE00505039 /* ZHanKaiAndShouQIUITests.m */; };
+		04EFCBF225E2BDA10005ACBA /* NETextPackAndExpendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EFCBF125E2BDA10005ACBA /* NETextPackAndExpendView.m */; };
+		04EFCBF925E2C98A0005ACBA /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EFCBF725E2C98A0005ACBA /* TestTableViewController.m */; };
+		04EFCBFA25E2C98A0005ACBA /* TestTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EFCBF825E2C98A0005ACBA /* TestTableViewController.xib */; };
+		04EFCC0125E2CACB0005ACBA /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EFCBFF25E2CACB0005ACBA /* TestViewController.m */; };
+		04EFCC0225E2CACB0005ACBA /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EFCC0025E2CACB0005ACBA /* TestViewController.xib */; };
+		F44F641D257D20DCC673AB88 /* libPods-ZHanKaiAndShouQI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3516964D7284CD0B16DB7C /* libPods-ZHanKaiAndShouQI.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +60,17 @@
 		046E8BF425E1F1AE00505039 /* ZHanKaiAndShouQIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZHanKaiAndShouQIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		046E8BF825E1F1AE00505039 /* ZHanKaiAndShouQIUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHanKaiAndShouQIUITests.m; sourceTree = "<group>"; };
 		046E8BFA25E1F1AE00505039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04EFCBF025E2BDA10005ACBA /* NETextPackAndExpendView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NETextPackAndExpendView.h; sourceTree = "<group>"; };
+		04EFCBF125E2BDA10005ACBA /* NETextPackAndExpendView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NETextPackAndExpendView.m; sourceTree = "<group>"; };
+		04EFCBF625E2C98A0005ACBA /* TestTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
+		04EFCBF725E2C98A0005ACBA /* TestTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
+		04EFCBF825E2C98A0005ACBA /* TestTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestTableViewController.xib; sourceTree = "<group>"; };
+		04EFCBFE25E2CACB0005ACBA /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		04EFCBFF25E2CACB0005ACBA /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		04EFCC0025E2CACB0005ACBA /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
+		2F3516964D7284CD0B16DB7C /* libPods-ZHanKaiAndShouQI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZHanKaiAndShouQI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7388FC7D5D3BDD1B4F13A72A /* Pods-ZHanKaiAndShouQI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZHanKaiAndShouQI.debug.xcconfig"; path = "Target Support Files/Pods-ZHanKaiAndShouQI/Pods-ZHanKaiAndShouQI.debug.xcconfig"; sourceTree = "<group>"; };
+		C88A6B3021FB8FB5F58F8324 /* Pods-ZHanKaiAndShouQI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZHanKaiAndShouQI.release.xcconfig"; path = "Target Support Files/Pods-ZHanKaiAndShouQI/Pods-ZHanKaiAndShouQI.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F44F641D257D20DCC673AB88 /* libPods-ZHanKaiAndShouQI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +106,8 @@
 				046E8BEC25E1F1AE00505039 /* ZHanKaiAndShouQITests */,
 				046E8BF725E1F1AE00505039 /* ZHanKaiAndShouQIUITests */,
 				046E8BCF25E1F1AC00505039 /* Products */,
+				8D138E97628C935106C137AE /* Pods */,
+				BA24C6D1BC23728A57DB4B28 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +130,14 @@
 				046E8BD525E1F1AC00505039 /* SceneDelegate.m */,
 				046E8BD725E1F1AC00505039 /* ViewController.h */,
 				046E8BD825E1F1AC00505039 /* ViewController.m */,
+				04EFCBFE25E2CACB0005ACBA /* TestViewController.h */,
+				04EFCBFF25E2CACB0005ACBA /* TestViewController.m */,
+				04EFCC0025E2CACB0005ACBA /* TestViewController.xib */,
+				04EFCBF625E2C98A0005ACBA /* TestTableViewController.h */,
+				04EFCBF725E2C98A0005ACBA /* TestTableViewController.m */,
+				04EFCBF825E2C98A0005ACBA /* TestTableViewController.xib */,
+				04EFCBF025E2BDA10005ACBA /* NETextPackAndExpendView.h */,
+				04EFCBF125E2BDA10005ACBA /* NETextPackAndExpendView.m */,
 				046E8BDA25E1F1AC00505039 /* Main.storyboard */,
 				046E8BDD25E1F1AE00505039 /* Assets.xcassets */,
 				046E8BDF25E1F1AE00505039 /* LaunchScreen.storyboard */,
@@ -137,6 +165,23 @@
 			path = ZHanKaiAndShouQIUITests;
 			sourceTree = "<group>";
 		};
+		8D138E97628C935106C137AE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7388FC7D5D3BDD1B4F13A72A /* Pods-ZHanKaiAndShouQI.debug.xcconfig */,
+				C88A6B3021FB8FB5F58F8324 /* Pods-ZHanKaiAndShouQI.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BA24C6D1BC23728A57DB4B28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F3516964D7284CD0B16DB7C /* libPods-ZHanKaiAndShouQI.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,6 +189,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 046E8BFD25E1F1AE00505039 /* Build configuration list for PBXNativeTarget "ZHanKaiAndShouQI" */;
 			buildPhases = (
+				4F9240C2E846788EECE1853B /* [CP] Check Pods Manifest.lock */,
 				046E8BCA25E1F1AC00505039 /* Sources */,
 				046E8BCB25E1F1AC00505039 /* Frameworks */,
 				046E8BCC25E1F1AC00505039 /* Resources */,
@@ -240,8 +286,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				046E8BE125E1F1AE00505039 /* LaunchScreen.storyboard in Resources */,
+				04EFCC0225E2CACB0005ACBA /* TestViewController.xib in Resources */,
 				046E8BDE25E1F1AE00505039 /* Assets.xcassets in Resources */,
 				046E8BDC25E1F1AC00505039 /* Main.storyboard in Resources */,
+				04EFCBFA25E2C98A0005ACBA /* TestTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +309,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4F9240C2E846788EECE1853B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZHanKaiAndShouQI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		046E8BCA25E1F1AC00505039 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -268,8 +341,11 @@
 			files = (
 				046E8BD925E1F1AC00505039 /* ViewController.m in Sources */,
 				046E8BD325E1F1AC00505039 /* AppDelegate.m in Sources */,
+				04EFCC0125E2CACB0005ACBA /* TestViewController.m in Sources */,
 				046E8BE425E1F1AE00505039 /* main.m in Sources */,
+				04EFCBF925E2C98A0005ACBA /* TestTableViewController.m in Sources */,
 				046E8BD625E1F1AC00505039 /* SceneDelegate.m in Sources */,
+				04EFCBF225E2BDA10005ACBA /* NETextPackAndExpendView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +514,7 @@
 		};
 		046E8BFE25E1F1AE00505039 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7388FC7D5D3BDD1B4F13A72A /* Pods-ZHanKaiAndShouQI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -455,6 +532,7 @@
 		};
 		046E8BFF25E1F1AE00505039 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C88A6B3021FB8FB5F58F8324 /* Pods-ZHanKaiAndShouQI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

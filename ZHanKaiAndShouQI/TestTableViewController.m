@@ -6,9 +6,9 @@
 //
 
 #import "TestTableViewController.h"
-
+#import "NETextPackAndExpendView.h"
 @interface TestTableViewController ()
-
+@property (nonatomic,strong) NETextPackAndExpendView *textPackAndExpendView;
 @end
 
 @implementation TestTableViewController
