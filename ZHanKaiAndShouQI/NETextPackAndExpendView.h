@@ -22,28 +22,28 @@ typedef enum : NSUInteger {
 @end
 
 @interface NETextPackAndExpendConfig :NSObject
-@property (nonatomic, copy) NSString * defaultTextString;
-@property (nonatomic, copy) NSString * textString;
+@property (nonatomic, copy) NSString *defaultTextString;
+@property (nonatomic, copy) NSString *textString;
 @property (nonatomic, assign) NSInteger maxLine;
-@property (nonatomic, strong) UIFont * font;
-@property (nonatomic, strong) UIColor * textColor;
+@property (nonatomic, strong) UIFont *font;
+@property (nonatomic, strong) UIColor *textColor;
 @property (nonatomic, assign) CGFloat lineSpace;
 @property (nonatomic,assign) NEActionTextPosition actionTextPosition;
 @property (nonatomic, assign) BOOL isOpenNormalTextAction;// 是否为正常文字设置点击事件
-@property (nonatomic, strong) UIColor * actionTextColor;//全部  和 收起
+@property (nonatomic, strong) UIColor *actionTextColor;//全部  和 收起
 
 #pragma mark -- NEActionTextLineStart
 
-@property (nonatomic, strong) NSString * titleExpend;//全部
-@property (nonatomic, strong) NSString * titlePack;//收起
+@property (nonatomic, strong) NSString *titleExpend;//全部
+@property (nonatomic, strong) NSString *titlePack;//收起
 
 @end
 
 @interface NETextPackAndExpendView : UIView
 
-@property (nonatomic,weak) id <NETextPackAndExpendViewDelegate>delegate;
+@property (nonatomic,weak) id<NETextPackAndExpendViewDelegate> delegate;
 
--(instancetype)initWithFrame:(CGRect)frame textPackAndExpendConfig:(NETextPackAndExpendConfig*)textPackAndExpendConfig;
+- (instancetype)initWithFrame:(CGRect)frame textPackAndExpendConfig:(NETextPackAndExpendConfig*)textPackAndExpendConfig;
 - (void)updateTextView;
 @end
 

@@ -48,7 +48,6 @@
     #pragma mark -- NEActionTextLineStart
     self.titleExpend = @"全文";
     self.titlePack = @"收起";
-    
 }
 
 @end
@@ -275,7 +274,6 @@
         _textLabel.userInteractionEnabled = YES;
         _textLabel.textVerticalAlignment = YYTextVerticalAlignmentTop;
         _textLabel.font = self.textPackAndExpendConfig.font;
-        _textLabel.backgroundColor = [UIColor yellowColor];
     }
     return _textLabel;
 }
