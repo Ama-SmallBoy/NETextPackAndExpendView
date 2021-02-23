@@ -73,10 +73,10 @@
         make.height.mas_equalTo(0);
     }];
     [self.textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self);
-        make.right.equalTo(self);
-        make.bottom.equalTo(self.actionBtn.mas_top);
-        make.top.equalTo(self);
+        make.left.mas_equalTo(self);
+        make.right.mas_equalTo(self);
+        make.bottom.mas_equalTo(self.actionBtn.mas_top);
+        make.top.mas_equalTo(self);
     }];
 }
 

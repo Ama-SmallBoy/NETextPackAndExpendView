@@ -19,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.config = [[NETextPackAndExpendConfig alloc] init];
-    self.config.textString = @"当前的群无多群无多群无多群问价哈哈哈哈哈当前的群无多群无多群无多群问价哈哈哈哈哈当前的群无多群无多群无多群问价哈哈哈哈哈当前的群无多群无多群无多群问价哈哈哈哈哈当前的群无多群无多群无多群问价哈哈哈哈哈当前的群";
+    self.config.textString = @"当前的群无多群无多群无多群问价哈哈哈哈哈当前的群无多群无多群无多群问价哈哈哈哈哈当前的群无多群无多群无多群问价哈哈哈哈哈当前的群无多群无多群无多群问价哈哈哈哈哈当前的群无多群无多群无多群问价哈哈哈哈哈当前的群123";// 多群问价哈哈哈哈哈当前的群无多群无多群无多群 多群问价哈哈哈哈哈当前的群无多群无多群无多群";
     
     self.config.font = [UIFont systemFontOfSize:14.0 weight:UIFontWeightRegular];
     self.config.maxLine = 5;
@@ -52,7 +52,7 @@
 #pragma mark --- getter
 - (NETextPackAndExpendView*)textPackAndExpendView {
     if (!_textPackAndExpendView) {
-        CGFloat width = CGRectGetWidth(self.view.frame) - 30; //CGRectGetWidth([UIScreen mainScreen].bounds);
+        CGFloat width = CGRectGetWidth([UIScreen mainScreen].bounds) - 30;
         _textPackAndExpendView = [[NETextPackAndExpendView alloc]initWithFrame:CGRectMake(0, 0, width, 0) textPackAndExpendConfig:self.config];
         _textPackAndExpendView.delegate = self;
         _textPackAndExpendView.backgroundColor = [UIColor redColor];
