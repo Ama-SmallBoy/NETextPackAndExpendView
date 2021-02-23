@@ -19,12 +19,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.config = [[NETextPackAndExpendConfig alloc] init];
-    self.config.textString = @"当前的群无多群无多群无多群问价哈哈哈哈哈当前的群无多群无多群无多群问价哈哈哈哈哈当前的群无多群无多群无多群问价哈哈哈哈哈当前的群无多群无多群无多群问价哈哈哈哈哈当前的群无多群无多群无多群问价哈哈哈哈哈当前的群123";// 多群问价哈哈哈哈哈当前的群无多群无多群无多群 多群问价哈哈哈哈哈当前的群无多群无多群无多群";
+    self.config.textString = @"当前的群无多群无多群无多群问价哈哈哈哈哈当前的群无多群无多群无多群问价哈哈哈哈哈当前的群无多群无多群无多群问价哈哈哈哈哈当前的群无多群无多群无多群问价哈哈哈哈哈当前的群无多群无多群无多群问价哈哈哈哈哈当前的群123 多群问价哈哈哈哈";//哈当前的群无多群无多群无多群 多群问价哈哈哈哈哈当前的群无多群无多群无多群";
     
     self.config.font = [UIFont systemFontOfSize:14.0 weight:UIFontWeightRegular];
     self.config.maxLine = 5;
-    //self.config.actionTextPosition = NEActionTextLineStart;
-    self.config.actionTextPosition = NEActionTextLineEnd;
+    self.config.actionTextPosition = NEActionTextLineStart;
+    //self.config.actionTextPosition = NEActionTextLineEnd;
 
     [self.view addSubview:self.textPackAndExpendView];
     [_textPackAndExpendView mas_makeConstraints:^(MASConstraintMaker *make) {

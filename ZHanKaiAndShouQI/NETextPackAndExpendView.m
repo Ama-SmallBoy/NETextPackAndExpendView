@@ -116,7 +116,7 @@
                 normalColor:self.textPackAndExpendConfig.textColor
               highlightText:self.textPackAndExpendConfig.textString
              highlightColor:self.textPackAndExpendConfig.textColor
-            highlightBColor:self.textPackAndExpendConfig.textColor];
+            highlightBColor:[UIColor clearColor]];
     }
     //NSLog(@"============%lf",extentHeight);
     if ([self.delegate respondsToSelector:@selector(updateSelfHeight:)]) {
