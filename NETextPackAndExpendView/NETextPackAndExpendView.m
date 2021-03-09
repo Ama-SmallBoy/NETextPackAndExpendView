@@ -3,13 +3,17 @@
 //  ZHanKaiAndShouQI
 //
 //  Created by Xdf on 2021/2/22.
+
+
+
+
+
 //1.判定是否小于5行 是 就直接不展示 全部的按钮
 //2.判定是否等于5行 是 判定 range > visibleRange 是
 
 #import "NETextPackAndExpendView.h"
-#import <YYKit/YYKit.h>
-#import "NSAttributedString+YYText.h"
-#import <Masonry.h>
+#import "YYText.h"
+
 @interface NETextPackAndExpendView ()
 @property (nonatomic, strong) YYLabel *textLabel;
 @property (nonatomic, strong) UIButton *actionBtn;
@@ -19,7 +23,8 @@
 #define kActionButtonHeight 20
 @implementation NETextPackAndExpendConfig
 
-- (instancetype)init {
+- (instancetype)init
+{
     self = [super init];
     if (self) {
         [self defaultConfig];
@@ -27,7 +32,7 @@
     return self;
 }
 
-- (void)defaultConfig{
+- (void) defaultConfig{
     
     self.defaultTextString = @"默认信息可以自定义处理";
     self.textString = @"默认信息可以自定义处理";
@@ -47,7 +52,7 @@
 @end
 
 @implementation NETextPackAndExpendView
-- (instancetype)initWithFrame:(CGRect)frame textPackAndExpendConfig:(NETextPackAndExpendConfig *)textPackAndExpendConfig{
+-(instancetype)initWithFrame:(CGRect)frame textPackAndExpendConfig:(NETextPackAndExpendConfig *)textPackAndExpendConfig{
     self = [super initWithFrame:frame];
     if (self) {
         self.textPackAndExpendConfig = textPackAndExpendConfig;
@@ -55,7 +60,6 @@
     }
     return self;
 }
-
 - (void)layoutSubView {
     self.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.textLabel];
@@ -73,11 +77,15 @@
     }];
 }
 
-- (void)updateTextView {
+- (void)updateTextView{
     
-    self.textLabel.attributedText = self.attributedText;
-    [self.textLabel sizeToFit];
-
+    [self setUpTextLabelText];
+    [self layoutSubviewsByActionTextPosition];
+    [self initOpenNormalTextAction];
+    
+}
+#pragma mark ---- 根据不同模式布局
+- (void)layoutSubviewsByActionTextPosition {
     CGFloat extentHeight = 0;
     switch (self.textPackAndExpendConfig.actionTextPosition) {
         case NEActionTextLineEnd:
@@ -103,8 +111,33 @@
         default:
             break;
     }
-    if ([self.delegate respondsToSelector:@selector(updateSelfHeight:)]) {
-        [self.delegate updateSelfHeight:self.textLabel.frame.size.height + extentHeight];
+    NSLog(@"==============%lf",self.textLabel.frame.size.height + extentHeight);
+    [self mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(self.textLabel.frame.size.height + extentHeight);
+    }];
+}
+
+#pragma mark --- 设置Text
+- (void)setUpTextLabelText {
+    NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
+        //调整行间距
+    paragraphStyle.lineSpacing = _textPackAndExpendConfig.lineSpace;
+    NSDictionary *attriDict = @{NSParagraphStyleAttributeName:paragraphStyle};
+    _attributedText = [[NSMutableAttributedString alloc]initWithString:_textPackAndExpendConfig.textString attributes:attriDict];
+    _attributedText.yy_font = _textPackAndExpendConfig.font;
+    NSLog(@"==============%@",_attributedText);
+    self.textLabel.attributedText = _attributedText;
+    [self.textLabel sizeToFit];
+}
+#pragma mark --- 设置高亮可点击
+- (void)initOpenNormalTextAction {
+    if (self.textPackAndExpendConfig.isOpenNormalTextAction) {
+        [self setNormalText:self.textPackAndExpendConfig.textString
+                 normalFont:self.textPackAndExpendConfig.font
+                normalColor:self.textPackAndExpendConfig.textColor
+              highlightText:self.textPackAndExpendConfig.textString
+             highlightColor:self.textPackAndExpendConfig.textColor
+            highlightBColor:[UIColor clearColor]];
     }
 }
 
@@ -121,36 +154,30 @@
         // 点击全文回调
         [weakSelf updateFrameInNEActionTextLineEndPattern:YES];
     };
-    
-    [text setColor:self.textPackAndExpendConfig.actionTextColor range:[text.string rangeOfString:self.textPackAndExpendConfig.titleExpend]];
-    [text setTextHighlight:hi range:[text.string rangeOfString:self.textPackAndExpendConfig.titleExpend]];
-    text.font = _textLabel.font;
+
+    [text yy_setColor:self.textPackAndExpendConfig.actionTextColor range:[text.string rangeOfString:self.textPackAndExpendConfig.titleExpend]];
+    [text yy_setTextHighlight:hi range:[text.string rangeOfString:self.textPackAndExpendConfig.titleExpend]];
+    text.yy_font = _textLabel.font;
      
     YYLabel *seeMore = [YYLabel new];
     seeMore.attributedText = text;
     [seeMore sizeToFit];
      
-    NSAttributedString *truncationToken = [NSAttributedString attachmentStringWithContent:seeMore contentMode:UIViewContentModeCenter attachmentSize:seeMore.frame.size alignToFont:text.font alignment:YYTextVerticalAlignmentCenter];
+    NSAttributedString *truncationToken = [NSAttributedString yy_attachmentStringWithContent:seeMore contentMode:UIViewContentModeCenter attachmentSize:seeMore.frame.size alignToFont:text.yy_font alignment:YYTextVerticalAlignmentCenter];
     
     _textLabel.truncationToken = truncationToken;
 }
-
 #pragma mark - 添加收起
+
 - (NSAttributedString *)appendAttriStringWithFont:(UIFont *)font {
     if (!font) {
         font = [UIFont systemFontOfSize:14.0];
     }
-    
     NSString *appendText = [NSString stringWithFormat:@" %@ ",self.textPackAndExpendConfig.titlePack];
-    NSDictionary * attributeDictionary = @{
-        NSFontAttributeName : font,
-        NSForegroundColorAttributeName : self.textPackAndExpendConfig.actionTextColor
-    };
+    NSMutableAttributedString *append = [[NSMutableAttributedString alloc] initWithString:appendText attributes:@{NSFontAttributeName : font, NSForegroundColorAttributeName : self.textPackAndExpendConfig.actionTextColor}];
     
-    NSMutableAttributedString *append = [[NSMutableAttributedString alloc] initWithString:appendText
-                                                                               attributes:attributeDictionary];
     YYTextHighlight *hi = [YYTextHighlight new];
-    [append setTextHighlight:hi range:[append.string rangeOfString:appendText]];
+    [append yy_setTextHighlight:hi range:[append.string rangeOfString:appendText]];
     
     __weak typeof(self) weakSelf = self;
     hi.tapAction = ^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect) {
@@ -162,7 +189,7 @@
 
 - (void)expandString {
     NSMutableAttributedString *attri = [self.textLabel.attributedText mutableCopy];
-    [attri appendAttributedString:[self appendAttriStringWithFont:attri.font]];
+    [attri appendAttributedString:[self appendAttriStringWithFont:attri.yy_font]];
     self.textLabel.attributedText = attri;
 }
 - (void)packUpString {
@@ -191,7 +218,7 @@
 }
 #pragma mark ------ NEActionTextLineStart
 //1.在 头部添加模式下 ，是否需要展示 全部按钮
-- (BOOL)isShowExpendButtonInActionTextLineStartPattern{
+- (BOOL) isShowExpendButtonInActionTextLineStartPattern{
     if (self.textLabel.textLayout.rowCount < self.textPackAndExpendConfig.maxLine) {
         return NO;
     }else if (self.textLabel.textLayout.rowCount == self.textPackAndExpendConfig.maxLine){
@@ -216,9 +243,33 @@
     }
     [self.textLabel sizeToFit];
     CGFloat height = [self isShowExpendButtonInActionTextLineStartPattern] ? (self.textLabel.frame.size.height+kActionButtonHeight) : self.textLabel.frame.size.height;
+    [self mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(height);
+    }];
     if ([self.delegate respondsToSelector:@selector(updateSelfHeight:)]) {
         [self.delegate updateSelfHeight:height];
     }
+}
+//3.标注 单个 高亮 状态
+-(void)setNormalText:(NSString *)normalText
+          normalFont:(UIFont *)normalFont
+         normalColor:(UIColor*)normalColor
+       highlightText:(NSString *)highlightText
+      highlightColor:(UIColor*)highlightColor
+     highlightBColor:(UIColor*)highlightBColor{
+    // 1. 创建属性字符串。
+    NSRange range =[normalText rangeOfString:highlightText];
+    @weakify(self)
+    [self.attributedText yy_setTextHighlightRange:range
+                                      color:highlightColor
+                            backgroundColor:highlightBColor
+                                  tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect) {
+        @strongify(self)
+        if ([self.delegate respondsToSelector:@selector(showContentInputView)]) {
+            [self.delegate showContentInputView];
+        }
+    }];
+    self.textLabel.attributedText = self.attributedText;
 }
 
 - (void) addSeeMoreButtonInActionTextLineStartPattern {
@@ -243,21 +294,11 @@
         _textLabel.userInteractionEnabled = YES;
         _textLabel.textVerticalAlignment = YYTextVerticalAlignmentTop;
         _textLabel.font = self.textPackAndExpendConfig.font;
+        _textLabel.textAlignment = NSTextAlignmentLeft;
     }
     return _textLabel;
 }
 
--(NSMutableAttributedString *)attributedText{
-    if (!_attributedText) {
-        NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
-          //调整行间距
-        paragraphStyle.lineSpacing = self.textPackAndExpendConfig.lineSpace;
-        NSDictionary *attriDict = @{NSParagraphStyleAttributeName:paragraphStyle};
-        _attributedText = [[NSMutableAttributedString alloc]initWithString:self.textPackAndExpendConfig.textString attributes:attriDict];
-        _attributedText.font = self.textPackAndExpendConfig.font;
-    }
-    return _attributedText;
-}
 -(UIButton *)actionBtn{
     if (!_actionBtn) {
         _actionBtn = [[UIButton alloc]initWithFrame:CGRectZero];

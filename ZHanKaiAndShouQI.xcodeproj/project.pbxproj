@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0405B86825F74EA000405C27 /* NECourseInfoTextExpendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0405B86625F74EA000405C27 /* NECourseInfoTextExpendView.m */; };
 		046E8BD325E1F1AC00505039 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 046E8BD225E1F1AC00505039 /* AppDelegate.m */; };
 		046E8BD625E1F1AC00505039 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 046E8BD525E1F1AC00505039 /* SceneDelegate.m */; };
 		046E8BD925E1F1AC00505039 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046E8BD825E1F1AC00505039 /* ViewController.m */; };
@@ -42,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0405B86625F74EA000405C27 /* NECourseInfoTextExpendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NECourseInfoTextExpendView.m; sourceTree = "<group>"; };
+		0405B86725F74EA000405C27 /* NECourseInfoTextExpendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NECourseInfoTextExpendView.h; sourceTree = "<group>"; };
+		0405B86C25F7543600405C27 /* TextEpendMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextEpendMacro.h; sourceTree = "<group>"; };
 		046E8BCE25E1F1AC00505039 /* ZHanKaiAndShouQI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHanKaiAndShouQI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		046E8BD125E1F1AC00505039 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		046E8BD225E1F1AC00505039 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 		046E8BD025E1F1AC00505039 /* ZHanKaiAndShouQI */ = {
 			isa = PBXGroup;
 			children = (
+				0405B86725F74EA000405C27 /* NECourseInfoTextExpendView.h */,
+				0405B86625F74EA000405C27 /* NECourseInfoTextExpendView.m */,
 				046E8BD125E1F1AC00505039 /* AppDelegate.h */,
 				046E8BD225E1F1AC00505039 /* AppDelegate.m */,
 				046E8BD425E1F1AC00505039 /* SceneDelegate.h */,
@@ -143,6 +149,7 @@
 				046E8BDF25E1F1AE00505039 /* LaunchScreen.storyboard */,
 				046E8BE225E1F1AE00505039 /* Info.plist */,
 				046E8BE325E1F1AE00505039 /* main.m */,
+				0405B86C25F7543600405C27 /* TextEpendMacro.h */,
 			);
 			path = ZHanKaiAndShouQI;
 			sourceTree = "<group>";
@@ -342,6 +349,7 @@
 				046E8BD925E1F1AC00505039 /* ViewController.m in Sources */,
 				046E8BD325E1F1AC00505039 /* AppDelegate.m in Sources */,
 				04EFCC0125E2CACB0005ACBA /* TestViewController.m in Sources */,
+				0405B86825F74EA000405C27 /* NECourseInfoTextExpendView.m in Sources */,
 				046E8BE425E1F1AE00505039 /* main.m in Sources */,
 				04EFCBF925E2C98A0005ACBA /* TestTableViewController.m in Sources */,
 				046E8BD625E1F1AC00505039 /* SceneDelegate.m in Sources */,
